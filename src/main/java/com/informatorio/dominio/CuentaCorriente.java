@@ -23,8 +23,14 @@ public class CuentaCorriente extends Cuenta {
         this.limiteSobregiro = limiteSobregiro;
     }
 
-
-
-
-
+    // Retirar con límite de sobregiro;
+    @Override
+    public void retirar(double monto) {
+        double saldoActual = getSaldo();
+        if (monto <= saldoActual + limiteSobregiro) {
+            setSaldo(saldoActual - monto);
+        } else {
+            System.out.println("No se puede realizar el retiro de dinero porque ha excedido el limite de sobregiro");
+        }
+    }
 }

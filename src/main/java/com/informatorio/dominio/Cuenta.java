@@ -1,7 +1,6 @@
 package com.informatorio.dominio;
 
 public class Cuenta {
-
     private Long id;
     private Cliente titular;
     private Double saldo;
@@ -36,6 +35,20 @@ public class Cuenta {
     public void setSaldo(Double saldo) {
         this.saldo = saldo;
     }
+
+    // Depositar Pesos en cuenta;
+    public void depositar(double monto) {
+        setSaldo(getSaldo() + monto);
+    }
+
+    // Consultar saldo;
+    public Double consultarSaldo(){
+        System.out.println("Saldo actual: ");
+        return getSaldo();
+    }
+
+    // Retirar Pesos de la cuenta;
+    public void retirar (double monto){};
 
 
 }

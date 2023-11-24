@@ -23,8 +23,16 @@ public class CajaAhorro extends Cuenta{
         this.interes = interes;
     }
 
+    // Retirar dinero;
+    @Override
+    public void retirar(double monto) {
+        setSaldo(getSaldo() - monto);
+    }
 
-
-
+    // Calcular intereses;
+    public void calcularInteres() {
+        double intereses = getSaldo() * interes / 100;
+        setSaldo(getSaldo() + intereses);
+    }
 
 }

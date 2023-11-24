@@ -1,5 +1,6 @@
 package com.informatorio.dominio;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cliente {
@@ -7,7 +8,7 @@ public class Cliente {
     private Long id;
     private String nombre;
     private String domicilio;
-    private List<Cuenta> cuentas;
+    private List<Cuenta> cuentas = new ArrayList<>();
 
     public Cliente() { }
     public Cliente(Long id, String nombre, String domicilio) {
@@ -52,6 +53,24 @@ public class Cliente {
 
     public void setCuentas(List<Cuenta> cuentas) {
         this.cuentas = cuentas;
+    }
+
+    // Agregar cuenta;
+    public void agregarCuenta(Cuenta cuenta) {
+        cuentas.add(cuenta);
+    }
+
+    //Eliminar cuenta;
+    public void eliminarCuenta(Cuenta cuenta) { cuentas.remove(cuenta);}
+
+    // Consultar saldos totales;
+    public double consultarSaldosTotales() {
+        double saldoTotal = 0;
+        for (Cuenta cuenta : cuentas) {
+            saldoTotal += cuenta.getSaldo();
+        }
+        System.out.println("El saldo total de sus cuentas asciende a la suma de Pesos ($):");
+        return + saldoTotal;
     }
 
 }

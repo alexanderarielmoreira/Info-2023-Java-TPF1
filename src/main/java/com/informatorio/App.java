@@ -1,8 +1,14 @@
 package com.informatorio;
 
-public class App 
+import com.informatorio.dominio.CajaAhorro;
+import com.informatorio.dominio.Cliente;
+import com.informatorio.dominio.Cuenta;
+
+public class App
 {
     public static void main( String[] args ) {
-        System.out.println( "Configurando el proyecto Maven" );
+
+        ///////////////////;
+
     }
 }

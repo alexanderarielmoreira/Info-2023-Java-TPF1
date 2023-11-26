@@ -2,6 +2,9 @@ package com.informatorio.dominio;
 
 public class CuentaCorriente extends Cuenta {
 
+    public static final String MENSAJE_ALERTA_LIMITE_SOBREGIRO = "No se puede realizar el " +
+                                                                 "retiro de dinero porque ha excedido " +
+                                                                 "el limite de sobregiro";
     private Double limiteSobregiro;
 
     public CuentaCorriente() {}
@@ -30,7 +33,7 @@ public class CuentaCorriente extends Cuenta {
         if (monto <= saldoActual + limiteSobregiro) {
             setSaldo(saldoActual - monto);
         } else {
-            System.out.println("No se puede realizar el retiro de dinero porque ha excedido el limite de sobregiro");
+            System.out.println(MENSAJE_ALERTA_LIMITE_SOBREGIRO);
         }
     }
 }

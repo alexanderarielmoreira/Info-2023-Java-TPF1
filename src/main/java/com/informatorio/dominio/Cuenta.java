@@ -38,12 +38,13 @@ public class Cuenta {
 
     // Depositar Pesos en cuenta;
     public void depositar(double monto) {
+        System.out.println("Ha depositado: $" + monto);
         setSaldo(getSaldo() + monto);
     }
 
     // Consultar saldo;
     public Double consultarSaldo(){
-        System.out.println("Saldo actual: ");
+        System.out.println("- Saldo actual: -");
         return getSaldo();
     }
 

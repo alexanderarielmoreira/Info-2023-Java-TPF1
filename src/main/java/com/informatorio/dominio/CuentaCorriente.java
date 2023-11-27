@@ -30,7 +30,7 @@ public class CuentaCorriente extends Cuenta {
     @Override
     public void retirar(double monto) {
         double saldoActual = getSaldo();
-        if (monto <= saldoActual + limiteSobregiro) {
+        if (monto <= saldoActual + getLimiteSobregiro()) {
             setSaldo(saldoActual - monto);
         } else {
             System.out.println(MENSAJE_ALERTA_LIMITE_SOBREGIRO);

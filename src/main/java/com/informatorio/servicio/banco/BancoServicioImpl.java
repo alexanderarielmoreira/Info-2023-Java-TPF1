@@ -1,5 +1,6 @@
 package com.informatorio.servicio.banco;
 
+import com.informatorio.basededatos.BdClientes;
 import com.informatorio.dominio.Cliente;
 import com.informatorio.dominio.CajaAhorro;
 import com.informatorio.dominio.CuentaCorriente;
@@ -9,20 +10,28 @@ import java.util.List;
 
 public class BancoServicioImpl implements BancoServicio{
 
-    // Cargar una lista de clientes;
-
-    private List<Cliente> clientes = new ArrayList<>();
+    // Lista de clientes;
+    @Override
+    public void listaDeClientes(BdClientes listaDeClientes) {
+        // ;
+    }
 
     // Agregar cliente;
     @Override
     public void agregarCliente(Cliente cliente) {
-        clientes.add(cliente);
+        ///
+    }
+
+    // Regitrarse en el banco;
+    @Override
+    public void registrarseEnElBanco(Cliente cliente) {
+        ///
     }
 
     // Remover cliente;
     @Override
     public void removerCliente(Cliente cliente) {
-        clientes.remove(cliente);
+        ///
     }
 
     // Abrir Caja de Ahorro;

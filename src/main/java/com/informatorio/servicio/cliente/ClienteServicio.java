@@ -1,13 +1,17 @@
 package com.informatorio.servicio.cliente;
 
 import com.informatorio.dominio.Cuenta;
+import com.informatorio.dominio.Cliente;
 
 public interface ClienteServicio {
 
-    public void agregarCuenta(Cuenta cuenta);
+    // Agregar;
+    public void agregarCuenta(Cliente cliente, Cuenta cuenta);
 
-    public void eliminarCuenta(Cuenta cuenta);
+    // Eliminar;
+    public void eliminarCuenta(Cliente cliente, Cuenta cuenta);
 
-    public double consultarSaldosTotales();
+    // Consultar saldo total;
+    public double consultarSaldosTotales(Cliente cliente);
 
 }

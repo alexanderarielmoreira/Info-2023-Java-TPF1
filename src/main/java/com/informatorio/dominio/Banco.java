@@ -1,20 +1,13 @@
 package com.informatorio.dominio;
-import java.util.ArrayList; 
-import java.util.List;
 
 public class Banco {
-    protected List<Cliente> clientes;
 
-    public List<Cliente> getClientes() {
-        return clientes;
-    }
+    // Contiene una lista de clientes;
 
-    public void setClientes(List<Cliente> clientes) {
-        this.clientes = clientes;
-    }
+    // Los clientes pueden registrarse en el Banco;
 
-    public Banco() {
-        this.clientes = new ArrayList<>();
-    }
+    // Ofrece los servicios de:
+    //          1) Abrir cuentas;
+    //          2) Gestionar clientes;
 
 }

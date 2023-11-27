@@ -7,7 +7,7 @@ public class Cliente {
     private Long id;
     private String nombre;
     private String domicilio;
-    protected List<Cuenta> cuentas = new ArrayList<>();
+    private List<Cuenta> cuentas = new ArrayList<>();
 
     public Cliente() { }
     public Cliente(Long id, String nombre, String domicilio) {
@@ -54,5 +54,9 @@ public class Cliente {
         this.cuentas = cuentas;
     }
 
+    @Override
+    public String toString() {
+        return "Cliente: " + "Cuentas = " + cuentas ;
+    }
 
 }

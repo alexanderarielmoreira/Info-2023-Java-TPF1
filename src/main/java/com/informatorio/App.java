@@ -21,10 +21,6 @@ public class App {
         System.out.println("Domicilio: " + BdClientes.getClientePorId(6L).getDomicilio());
         System.out.println("Cuentas: " + BdClientes.getClientePorId(6L).getCuentas());
 
-        BancoServicio bancoServicio = new BancoServicioImpl();
-        bancoServicio.agregarCliente(BdClientes.getClientePorId(1L));
-
-
 
     }
 }

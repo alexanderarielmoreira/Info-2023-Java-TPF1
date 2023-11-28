@@ -10,38 +10,23 @@ import java.util.List;
 
 public class BancoServicioImpl implements BancoServicio{
 
-    // Lista de clientes;
     @Override
-    public void listaDeClientes(BdClientes listaDeClientes) {
-        // ;
-    }
-
-    // Agregar cliente;
-    @Override
-    public void agregarCliente(Cliente cliente) {
-        ///
-    }
-
-    // Regitrarse en el banco;
-    @Override
-    public void registrarseEnElBanco(Cliente cliente) {
-        ///
-    }
-
-    // Remover cliente;
-    @Override
-    public void removerCliente(Cliente cliente) {
-        ///
-    }
-
-    // Abrir Caja de Ahorro;
-    @Override
-    public void abrirCajaAhorro(Cliente cliente, CajaAhorro cajaAhorro) {
-        cajaAhorro.setTitular(cliente);
+    public void listaClientesDeBD(BdClientes baseDeDatos) {
+        ////;
     }
 
     @Override
-    public void abrirCuentaCorriente(Cliente cliente, CuentaCorriente cuentaCorriente) {
-        cuentaCorriente.setTitular(cliente);
+    public void agregarCliente(Long clave, Cliente cliente) {
+        ////;
+    }
+
+    @Override
+    public void abrirCuenta(Long id, Cliente titular, Double saldo) {
+        ////;
+    }
+
+    @Override
+    public void exportarCSV() {
+        ////;
     }
 }

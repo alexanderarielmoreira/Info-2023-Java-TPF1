@@ -15,12 +15,17 @@ public class App {
     public static void main( String[] args ) {
 
         BdClientes.iniciarClientes();
+        BancoServicioImpl bancoServicioImpl = new BancoServicioImpl();
+        bancoServicioImpl.listaClientesDeBD();
+        bancoServicioImpl.mostrarDatosCliente(1L);
 
-        System.out.println("Id: " + BdClientes.getClientePorId(6L).getId());
-        System.out.println("Nombre: " + BdClientes.getClientePorId(6L).getNombre());
-        System.out.println("Domicilio: " + BdClientes.getClientePorId(6L).getDomicilio());
-        System.out.println("Cuentas: " + BdClientes.getClientePorId(6L).getCuentas());
-
+        /*
+        System.out.println("Id: " + BdClientes.getClientePorId(1L).getId());
+        System.out.println("Nombre: " + BdClientes.getClientePorId(1L).getNombre());
+        System.out.println("Domicilio: " + BdClientes.getClientePorId(1L).getDomicilio());
+        // Me dice si el cliente 1 tiene o no vacia su lista de cuestas. Da false;
+        System.out.println("Cuentas: " + BdClientes.getClientePorId(1L).getCuentas().isEmpty());
+        */
 
     }
 }

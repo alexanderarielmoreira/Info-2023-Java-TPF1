@@ -2,17 +2,21 @@ package com.informatorio.servicio.banco;
 
 import com.informatorio.basededatos.BdClientes;
 import com.informatorio.dominio.Cliente;
-import com.informatorio.dominio.CajaAhorro;
-import com.informatorio.dominio.CuentaCorriente;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class BancoServicioImpl implements BancoServicio{
 
+    // Muestra una una lista de clientes bancarios;
     @Override
-    public void listaClientesDeBD(BdClientes baseDeDatos) {
-        ////;
+    public void listaClientesDeBD() {
+        System.out.println("CLIENTES BANCARIOS EN BASE DE DATOS:");
+        BdClientes.getClientes();
+    }
+
+    // Muestra datos de un cliente por su ID:
+    @Override
+    public void mostrarDatosCliente(Long id) {
+        System.out.println("DATOS DEL CLIENTE: ");
+        BdClientes.getClientePorId(id);
     }
 
     @Override
@@ -25,8 +29,4 @@ public class BancoServicioImpl implements BancoServicio{
         ////;
     }
 
-    @Override
-    public void exportarCSV() {
-        ////;
-    }
 }

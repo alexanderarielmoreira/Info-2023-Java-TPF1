@@ -5,13 +5,16 @@ import java.util.HashMap;
 import java.util.List;
 
 public class Banco {
-
     private String nombreDelBanco;
     private String domicilioDelBanco;
     private HashMap<Long, Cliente> clientesDelBanco;
     private List<Cuenta> listaDeCuentas;
 
     public Banco() {};
+
+    public Banco(HashMap<Long, Cliente> clientesDelBanco) {
+        this.clientesDelBanco = new HashMap<>(); 
+    };
 
     public Banco(String nombreDelBanco, String domicilioDelBanco, HashMap<Long, Cliente> clientesDelBanco, List<Cuenta> listaDeCuentas) {
         this.nombreDelBanco = nombreDelBanco;

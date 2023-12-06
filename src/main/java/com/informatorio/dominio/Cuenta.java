@@ -51,5 +51,4 @@ public class Cuenta {
     // Retirar Pesos de la cuenta;
     public void retirar (double monto){};
 
-
 }

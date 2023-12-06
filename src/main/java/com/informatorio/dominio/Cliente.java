@@ -9,7 +9,7 @@ public class Cliente {
     private String domicilio;
     private List<Cuenta> cuentas = new ArrayList<>();
 
-    public Cliente() { }
+    public Cliente() { };
     public Cliente(Long id, String nombre, String domicilio) {
         this.id = id;
         this.nombre = nombre;
@@ -50,13 +50,19 @@ public class Cliente {
         return cuentas;
     }
 
+    //Agrega una lista de cuentas;
     public void setCuentas(List<Cuenta> cuentas) {
         this.cuentas = cuentas;
     }
 
+    //Agrega una cuenta a la lista;
+    public void setCuentaUnica(Cuenta cuenta) {
+        this.cuentas.add(cuenta);
+    }
+
     @Override
     public String toString() {
-        return "Cliente: " + "Cuentas = " + cuentas ;
+        return "Cuentas = " + cuentas ;
     }
 
 }

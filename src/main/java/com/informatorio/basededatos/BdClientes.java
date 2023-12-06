@@ -55,15 +55,19 @@ public class BdClientes {
 
         // Cuentas Corrientes;
         CuentaCorriente cuentaCorriente1 = new CuentaCorriente(111L, cliente1, 300000.00, 300000.00);
-        CuentaCorriente cuentaCorriente2 = new CuentaCorriente(112L, cliente1, 400000.00, 300000.00);
-        CuentaCorriente cuentaCorriente33 = new CuentaCorriente(113L, cliente1, 500000.00, 300000.00);
-        CuentaCorriente cuentaCorriente4 = new CuentaCorriente(114L, cliente1, 600000.00, 300000.00);
-        CuentaCorriente cuentaCorriente5 = new CuentaCorriente(115L, cliente1, 700000.00, 300000.00);
-        CuentaCorriente cuentaCorriente6 = new CuentaCorriente(116L, cliente1, 800000.00, 300000.00);
-        CuentaCorriente cuentaCorriente7 = new CuentaCorriente(117L, cliente1, 900000.00, 300000.00);
-        CuentaCorriente cuentaCorriente8 = new CuentaCorriente(118L, cliente1, 1000000.00, 300000.00);
-        CuentaCorriente cuentaCorriente9 = new CuentaCorriente(119L, cliente1, 110000.00, 300000.00);
-        CuentaCorriente cuentaCorriente10 = new CuentaCorriente(120L, cliente1, 1200000.00, 300000.00);
+        CuentaCorriente cuentaCorriente2 = new CuentaCorriente(112L, cliente2, 400000.00, 300000.00);
+        CuentaCorriente cuentaCorriente33 = new CuentaCorriente(113L, cliente3, 500000.00, 300000.00);
+        CuentaCorriente cuentaCorriente4 = new CuentaCorriente(114L, cliente3, 600000.00, 300000.00);
+        CuentaCorriente cuentaCorriente5 = new CuentaCorriente(115L, cliente4, 700000.00, 300000.00);
+        CuentaCorriente cuentaCorriente6 = new CuentaCorriente(116L, cliente5, 800000.00, 300000.00);
+        CuentaCorriente cuentaCorriente7 = new CuentaCorriente(117L, cliente6, 900000.00, 300000.00);
+        CuentaCorriente cuentaCorriente8 = new CuentaCorriente(118L, cliente7, 1000000.00, 300000.00);
+        CuentaCorriente cuentaCorriente9 = new CuentaCorriente(119L, cliente8, 110000.00, 300000.00);
+        CuentaCorriente cuentaCorriente10 = new CuentaCorriente(120L, cliente9, 1200000.00, 300000.00);
+
+        // Asignación de cuentas a cliente2;
+        cliente2.setCuentaUnica(cajaAhorro2);
+        cliente2.setCuentaUnica(cuentaCorriente2);
 
         clientes = List.of(cliente1, cliente2, cliente3, cliente4, cliente5, cliente6, cliente7, cliente8, cliente9, cliente10);
 
@@ -79,7 +83,6 @@ public class BdClientes {
         }
     }
 
-
     // Muestra un cliente determinado, ingresando su id:
 
     public static void getClientePorId (Long id){
@@ -87,12 +90,16 @@ public class BdClientes {
             if (id.equals(cliente.getId())) {
                 System.out.println("ID: " + cliente.getId());
                 System.out.println("Nombre: " + cliente.getNombre());
-                // Corregir para mostrar datos de la Cuenta:
-                System.out.println("Cuentas: " + cliente.getCuentas());
+
+                for (Cuenta cuenta : cliente.getCuentas()) {
+                    System.out.println("Cuenta N° " + cuenta.getId());
+                    System.out.println("Saldo: $ " + cuenta.getSaldo());
+                    Class<?> tipo = cuenta.getClass();
+                    System.out.println("Tipo de cuenta: " + tipo.getSimpleName());
+                }
 
             }
         }
     }
-
 
 }

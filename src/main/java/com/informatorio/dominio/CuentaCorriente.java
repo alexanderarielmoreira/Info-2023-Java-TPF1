@@ -28,12 +28,17 @@ public class CuentaCorriente extends Cuenta {
 
     // Retirar con límite de sobregiro;
     @Override
-    public void retirar(double monto) {
-        double saldoActual = getSaldo();
+    public Double retirar(Double monto) {
+        System.out.println("Saldo actual: $ " + getSaldo());
+        Double saldoActual = getSaldo();
+        System.out.println("Límite de sobregiro: $ " + getLimiteSobregiro());
         if (monto <= saldoActual + getLimiteSobregiro()) {
             setSaldo(saldoActual - monto);
+            System.out.println("Nuevo saldo: $ " + getSaldo());
+            return getSaldo();
         } else {
             System.out.println(MENSAJE_ALERTA_LIMITE_SOBREGIRO);
         }
+        return null;
     }
 }

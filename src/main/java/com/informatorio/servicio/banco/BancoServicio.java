@@ -18,8 +18,10 @@ public interface BancoServicio {
     public void mostrarDatosCliente(Long id);
 
     // Agregar clientes;
-    public void agregarCliente(Long clave, Cliente cliente);
+    public void agregarNuevoCliente(Long id, String nombre, String domicilio);
 
-    public void abrirCuenta(Long id, Cliente titular, Double saldo);
+    public void abrirCajaDeAhorro(Long id, Cliente titular, Double saldo, Double interes);
+
+    public void abrirCuentaCorriente(Long id, Cliente titular, Double saldo, Double limiteSobregiro);
 
 }

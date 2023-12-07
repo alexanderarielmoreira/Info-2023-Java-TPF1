@@ -37,9 +37,11 @@ public class Cuenta {
     }
 
     // Depositar Pesos en cuenta;
-    public void depositar(double monto) {
+    public Double depositar(Double monto) {
         System.out.println("Ha depositado: $" + monto);
         setSaldo(getSaldo() + monto);
+        System.out.println("Nuevo saldo: $");
+        return getSaldo();
     }
 
     // Consultar saldo;
@@ -49,6 +51,9 @@ public class Cuenta {
     }
 
     // Retirar Pesos de la cuenta;
-    public void retirar (double monto){};
+    public Double retirar (Double monto){
+        setSaldo(getSaldo() - monto);
+        return getSaldo();
+    }
 
 }

@@ -96,8 +96,8 @@ public class BdClientes {
                     System.out.println("Saldo: $ " + cuenta.getSaldo());
                     Class<?> tipo = cuenta.getClass();
                     System.out.println("Tipo de cuenta: " + tipo.getSimpleName());
+                    System.out.println("* * * * * * * * * * * * * * * * *");
                 }
-
             }
         }
     }

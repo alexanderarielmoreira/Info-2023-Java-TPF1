@@ -5,23 +5,25 @@ import com.informatorio.basededatos.BdClientes;
 
 public interface BancoServicio {
 
-    // Los clientes pueden registrarse en el Banco;
-
-    // Ofrece los servicios de:
-    //          1) Abrir cuentas;
-    //          2) Gestionar clientes;
-
     // Obtener una lista de clientes de la BD;
     public void listaClientesDeBD();
 
     // Obtener datos de un cliente por su ID:
-    public void mostrarDatosCliente(Long id);
+    public void mostrarDatosCliente();
 
-    // Agregar clientes;
-    public void agregarNuevoCliente(Long id, String nombre, String domicilio);
+    // Agregar cliente manualmente;
+    public void agregarClienteEnBD(Cliente cliente);
 
-    public void abrirCajaDeAhorro(Long id, Cliente titular, Double saldo, Double interes);
+    // Agregar clientes por consola;
+    public void agregarNuevoCliente();
 
-    public void abrirCuentaCorriente(Long id, Cliente titular, Double saldo, Double limiteSobregiro);
+    public void abrirCajaDeAhorro();
+
+    public void abrirCuentaCorriente();
+
+    // Agregar cuenta a cliente;
+    public void agregarCuentaEnCliente(Long idClienteUser, Long idCuenta, Double saldo);
 
 }
+
+

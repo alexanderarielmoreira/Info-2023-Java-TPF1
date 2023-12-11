@@ -7,20 +7,22 @@ import java.util.List;
 public class Banco {
     private String nombreDelBanco;
     private String domicilioDelBanco;
-    private HashMap<Long, Cliente> clientesDelBanco;
-    private List<Cuenta> listaDeCuentas;
+
+    //private HashMap<Long, Cliente> clientesDelBanco;
+    //private List<Cuenta> listaDeCuentas;
 
     public Banco() {};
 
+    /*
     public Banco(HashMap<Long, Cliente> clientesDelBanco) {
         this.clientesDelBanco = new HashMap<>(); 
-    };
+    };*/
 
-    public Banco(String nombreDelBanco, String domicilioDelBanco, HashMap<Long, Cliente> clientesDelBanco, List<Cuenta> listaDeCuentas) {
+    public Banco(String nombreDelBanco, String domicilioDelBanco) {
         this.nombreDelBanco = nombreDelBanco;
         this.domicilioDelBanco = domicilioDelBanco;
-        this.clientesDelBanco = new HashMap<>();
-        this.listaDeCuentas = new ArrayList<>();
+        //this.clientesDelBanco = new HashMap<>();
+        //this.listaDeCuentas = new ArrayList<>();
     }
 
     public String getNombreDelBanco() {
@@ -39,21 +41,25 @@ public class Banco {
         this.domicilioDelBanco = domicilioDelBanco;
     }
 
+    /*
     public HashMap<Long, Cliente> getClientesDelBanco() {
         return clientesDelBanco;
-    }
+    }*/
 
+    /*
     public void setClientesDelBanco(HashMap<Long, Cliente> clientesDelBanco) {
         this.clientesDelBanco = clientesDelBanco;
-    }
+    }*/
 
+    /*
     public List<Cuenta> getListaDeCuentas() {
         return listaDeCuentas;
-    }
+    }*/
 
+    /*
     public void setListaDeCuentas(List<Cuenta> listaDeCuentas) {
         this.listaDeCuentas = listaDeCuentas;
-    }
+    }*/
 
 
 

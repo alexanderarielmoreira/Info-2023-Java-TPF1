@@ -36,24 +36,4 @@ public class Cuenta {
         this.saldo = saldo;
     }
 
-    // Depositar Pesos en cuenta;
-    public Double depositar(Double monto) {
-        System.out.println("Ha depositado: $" + monto);
-        setSaldo(getSaldo() + monto);
-        System.out.println("Nuevo saldo: $");
-        return getSaldo();
-    }
-
-    // Consultar saldo;
-    public Double consultarSaldo(){
-        System.out.println("- Saldo actual: -");
-        return getSaldo();
-    }
-
-    // Retirar Pesos de la cuenta;
-    public Double retirar (Double monto){
-        setSaldo(getSaldo() - monto);
-        return getSaldo();
-    }
-
 }

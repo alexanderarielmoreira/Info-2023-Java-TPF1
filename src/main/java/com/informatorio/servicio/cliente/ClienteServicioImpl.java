@@ -1,44 +1,39 @@
 package com.informatorio.servicio.cliente;
 
+import com.informatorio.basededatos.BdClientes;
 import com.informatorio.dominio.Cliente;
-import com.informatorio.dominio.Cuenta;
+import com.informatorio.entrada.IngresoPorConsola;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class ClienteServicioImpl implements ClienteServicio {
 
-    public static final String MENSAJE_SALDO_TOTAL_CUENTAS = "El saldo total de sus cuentas " +
-                                                             "asciende a la suma de Pesos ($):";
-
-    // Agregar cuenta;
     @Override
-    public  void agregarCuenta(Cliente cliente, Cuenta cuenta) {
-        List<Cuenta> agregarCta = new ArrayList<>();
-        agregarCta.add(cuenta);
-        cliente.setCuentas(agregarCta);
+    public void agregarNuevoCliente() {
+        // Se crea el nuevo cliente;
+        Cliente cliente = new Cliente();
+
+        System.out.println("Ingrese el número de Identifiación: ");
+        Long identicacion = IngresoPorConsola.getScanner().nextLong();
+        IngresoPorConsola.getScanner().nextLine();
+        cliente.setId(identicacion);
+
+        System.out.println("Ingrese su nombre y apellido: ");
+        String nombreUser = IngresoPorConsola.getScanner().nextLine();
+        cliente.setNombre(nombreUser);
+
+        System.out.println("Ingrese su domicilio actual: ");
+        String domicilioUser = IngresoPorConsola.getScanner().nextLine();
+        cliente.setDomicilio(domicilioUser);
+
+        // Se agrega el cliente a la lista de la BD;
+        BdClientes.setBdCliente(cliente);
+
+        System.out.println("Identificación: " + cliente.getId());
+        System.out.println("Nombre: " + cliente.getNombre());
+        System.out.println("Domicilio: " + cliente.getDomicilio());
+
     }
 
-    // Eliminar cuenta;
-    @Override
-    public void eliminarCuenta(Cliente cliente, Cuenta cuenta) {
-        List<Cuenta> eliminarCta = new ArrayList<>();
-        eliminarCta.remove(cuenta);
-        cliente.setCuentas(eliminarCta);
-    }
 
-    public double consultarSaldosTotales(Cliente cliente) {
-
-        double saldoTotal = 0;
-
-        List<Cuenta> listaDeCuentas = new ArrayList<>();
-        listaDeCuentas = cliente.getCuentas();
-
-        for (Cuenta cuenta : listaDeCuentas) {
-            saldoTotal += cuenta.getSaldo();
-        }
-        System.out.println(MENSAJE_SALDO_TOTAL_CUENTAS);
-        return + saldoTotal;
-    }
 
 }

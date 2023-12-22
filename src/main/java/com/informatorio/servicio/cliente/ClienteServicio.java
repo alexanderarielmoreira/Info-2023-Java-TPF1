@@ -5,13 +5,7 @@ import com.informatorio.dominio.Cliente;
 
 public interface ClienteServicio {
 
-    // Agregar;
-    public void agregarCuenta(Cliente cliente, Cuenta cuenta);
-
-    // Eliminar;
-    public void eliminarCuenta(Cliente cliente, Cuenta cuenta);
-
-    // Consultar saldo total;
-    public double consultarSaldosTotales(Cliente cliente);
+    // Agregar clientes por consola;
+    public void agregarNuevoCliente();
 
 }
